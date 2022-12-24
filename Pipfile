@@ -11,6 +11,9 @@ numpy = "*"
 xgboost = "*"
 seaborn = "*"
 joblib = "*"
+plotly = "*"
+ipykernel = "*"
+nbformat = "*"
 
 [dev-packages]
 ipykernel = "*"
