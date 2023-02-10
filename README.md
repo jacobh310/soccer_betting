@@ -36,10 +36,35 @@ The following features were engineered and added to the data set
 - FPD: Form Points Difference
 
 ## Exploratory Data Analysis
+### Categorical Variables
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/Home_win_barchart.png"
+    title="App Architecture" width="500"/></p>
+
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/Wins%20by%20season.png"
+    title="App Architecture" width="900"/></p>
+
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/Goals%20by%20season.png"
+    title="App Architecture" width="900"/></p>
+
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/goals%20by%20team.png"
+    title="App Architecture" width="900"/></p>
+
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/histograms.png"
+    title="App Architecture" width="900"/></p>
+    
+
+#### I have interactive scatter and bar charts in the web app I deployed for this project. [Check it out here](https://jacobh310-soccer-betting-app-frontend-game-predictions-cty251.streamlit.app/Exploratory_Data_Analysis)
 
 ## Model Building
+
 ### Establishing a baseline
 The model will only predict only home wins. The baseline is going to be home team winning percentage for each data set (Train and Dev). This is going to emulate betting on the hometeam to win very game. 
+
+### Correlation
+
+I dropped the bottom 4 features with the least correlation which are HTY, HTR, ATY, ATR. These are the average red and yellow cards per game for the home and away team
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/correlation.png"
+    title="App Architecture" width="500"/></p>
 
 #### Train Home Win Percentae: 46.73%
 #### Dev Home Win Percentage: 48.26%
@@ -52,14 +77,20 @@ The model will only predict only home wins. The baseline is going to be home tea
 
 ## Evaluate Model Performance
 ### Classfication Metrics
-**Insert Table**
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/model%20scores.png"
+    title="App Architecture" width="500"/></p>
 
 ### Profit/Loss
 These classification metrics should serve as a guideline but the ultimate goal is to make money from the predictions by placing bets on the model. We tested two betting strateies: Home Team Win and Positive Expevted Value
 
 #### Home Win
 This stratey is simple. If the model gives the home team a greater than 50% of winning then we are going to place a mock $100 dollar bet. If the model is right, the payout is calculated using the odds and added to the current balance. If the model is wrong then we are going to subtract $100 from the current balance
-**Insert Table and Graph**
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/HW_pl_table.png"
+    title="App Architecture" width="300"/></p>
+    
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/hw_pl.png"
+    title="App Architecture" width="700"/></p>
+
 
 
 #### Positive Expected Value
@@ -69,7 +100,11 @@ To explain this strategy, I am going to need to go over some basic sports bettin
 
 Without getting to much into it, the home odds for each game are converted to implied probability and will be compared to the model's predicted probability. If the model has a higher probability than the bookmkaers implied probability, then that signals to bet on the home team. The current balances are going to be calculated like in the Home Win strategy. 
 
-**Insert Table and Graph**
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/EV_pl_table.png"
+    title="App Architecture" width="300"/></p>
+    
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/ev_pl.png"
+    title="App Architecture" width="700"/></p>
 
 ## Conclusion and Next Steps
 
