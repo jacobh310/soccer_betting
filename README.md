@@ -65,14 +65,14 @@ Most of the data looks normally distributed with some plots having significant 0
 ### Establishing a baseline
 The model will only predict only home wins. The baseline is going to be home team winning percentage for each data set (Train and Dev). This is going to emulate betting on the hometeam to win very game. 
 
+#### Train Home Win Percentae: 46.73%
+#### Dev Home Win Percentage: 48.26%
+
 ### Correlation
 
 I dropped the bottom 4 features with the least correlation which are HTY, HTR, ATY, ATR. These are the average red and yellow cards per game for the home and away team
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/correlation.png"
     title="App Architecture" width="500"/></p>
-
-#### Train Home Win Percentae: 46.73%
-#### Dev Home Win Percentage: 48.26%
 
 **Features:** Average stats for each team split by home and away  
 **Labels:**  
@@ -90,12 +90,15 @@ These classification metrics should serve as a guideline but the ultimate goal i
 
 #### Home Win
 This stratey is simple. If the model gives the home team a greater than 50% of winning then we are going to place a mock $100 dollar bet. If the model is right, the payout is calculated using the odds and added to the current balance. If the model is wrong then we are going to subtract $100 from the current balance
+
+#### Results
+On the first column you have the Dev set Profit and the second column you have the Dev+Test profit. This combines the both dev and test.
+The baseline of just betting on the home team every game actually made you money on just the dev set. It was actually the second most profitable model. Once you add the test set you can see that it actually los you money. The common theme, as seen from the graph too, is that all the models made money at first but slowly started to lose money. This could be do to the pandemic season where home teams started to lose more often.
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/HW_pl_table.png"
     title="App Architecture" width="300"/></p>
     
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/hw_pl.png"
     title="App Architecture" width="700"/></p>
-
 
 
 #### Positive Expected Value
@@ -105,6 +108,9 @@ To explain this strategy, I am going to need to go over some basic sports bettin
 
 Without getting to much into it, the home odds for each game are converted to implied probability and will be compared to the model's predicted probability. If the model has a higher probability than the bookmkaers implied probability, then that signals to bet on the home team. The current balances are going to be calculated like in the Home Win strategy. 
 
+#### Results
+The excepected value strategy is more profitable on both the Dev set and the dev + test set. The common theme prevails that 3 quarters through the data all the models start to loose money. This is worht investigating further.
+
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/EV_pl_table.png"
     title="App Architecture" width="300"/></p>
     
@@ -112,6 +118,13 @@ Without getting to much into it, the home odds for each game are converted to im
     title="App Architecture" width="700"/></p>
 
 ## Conclusion and Next Steps
+The goals was acheived to make a model that would help the average sports bettor make money. However, there is still much room for improvement 
+- Add data from other soccer leagues for better generalization and prevent overfitting
+- Add rolling average to important statistics to capture a temporal elemenent 
+- Experiment with temporal neural networks like LSTM
+- Remove the seasons where games were played with no audience
+- Outlier analysis on features 
+
 
 
 
