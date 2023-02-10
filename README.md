@@ -31,3 +31,19 @@ The following features were engineered and added to the data set
 - FPD: Form Points Difference
 
 ## Exploratory Data Analysis
+
+## Model Building
+### Establishing a baseline
+The model will only predict home wins and not home win, draw or loss. The baseline is going to be home team winning percentage for each data set (Train and Dev). This is going to emulate betting on the hometeam to win very game. 
+#### Train Home Win Percentae: 46.73%
+#### Dev Home Win Percentage: 48.26%
+
+## Evaluate Model Performance
+### Classfication Metrics
+**Insert Table**
+
+### Profit/Loss
+These metrics should serve as a guideline but the ultimate goals is to make money from the predictions by placing bets on the model
+
+
+
