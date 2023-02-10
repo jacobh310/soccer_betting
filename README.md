@@ -7,7 +7,7 @@
 #### 📌 [See the web app in action here](https://jacobh310-soccer-betting-app-frontend-game-predictions-cty251.streamlit.app)
 
 ## Introduction
-The Sports Betting market is worth $74.2 billion dolalrs as of 2021 and is expexted to reach $129.3 billion by 2028 according to Global News Wire There is no question that your average sports gambler is competeting against companies that put in millions into having the best algorithims to price their odds all with the goal of making money of the average sports bettor. I tried to tilt the odds back to the sports bettor favor by training a machine learning algorithim that predicts the home teams winning probability.
+The Sports Betting market is worth $74.2 billion dolalrs as of 2021 and is expexted to reach $129.3 billion by 2028 according to Global News Wire There is no question that your average sports gambler is competeting against companies that put in millions into having the best algorithims to price their odds all with the goal of making money of the average sports bettor. I tried to tilt the odds back to the sports bettor favor by training a machine learning algorithim that predicts the home teams winning probability. **The goal of this project is to build a tool sports better can leverage to make more informed betting decisions**
 
 ## Data Collection
 In game statistics from the Premier league seasons 2000-2021 were collected from https://www.football-data.co.uk/englandm.php. Each season has its own CSV file and has a plethora of different in game. But is also has odds from different bookmkaers for each game. This will come into play when evaluating the models. The rows were mathces and the columns were game statitistcis. A row would contain the teams playing each other the respective stats for that game. 
@@ -37,18 +37,23 @@ The following features were engineered and added to the data set
 
 ## Exploratory Data Analysis
 ### Categorical Variables
+From the chart below you can see that home wins are almot split down the middile with the home team winning apporiximately 45% of the time. Having a unbalanced dataset is going to be problem
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/Home_win_barchart.png"
     title="App Architecture" width="500"/></p>
-
+The chart below dissects the match outcome (Home win, draw, away win) by season. You can see that the home team weins a majority of the time excet for 2021 where the away team won more.This comes into effect when we evaluating the profitability of the models. The model struggles to make money when the home team is winning less. More on that later.
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/Wins%20by%20season.png"
     title="App Architecture" width="900"/></p>
+The chart below dissects each home and away goals by season. You can see that the home team outscores the away team by a pretty large quantity every season except for 2021 where the home and away teams scored almost the same amount of goals. That contributed to home teams winning at a lower rate than usual  
+
+A home team usually has the advantage becasue they are played with home fans. The intimidation and yelling at the away team makes it harder for them to lose. But in 2021 a majority of the games were played without fans becasue of the covid-19 pandemic which equaled the playing field. This just goes to show you how fans play a huge 
+role in the outcome of the game. Next time, I will discard the 2021 season from the data set so the algorithims do not pick up on the pattern. 
 
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/Goals%20by%20season.png"
     title="App Architecture" width="900"/></p>
 
-<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/goals%20by%20team.png"
-    title="App Architecture" width="900"/></p>
+### Numerical Variables
 
+Most of the data looks normally distributed with some plots having significant 0 values 
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/histograms.png"
     title="App Architecture" width="900"/></p>
     
