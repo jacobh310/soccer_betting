@@ -5,6 +5,9 @@
 - Trained KNearest Neighbot, Random Forests, XGBoost, SVC, and Naive Bayes 
 - Built Web application
 #### 📌 [See the web app in action here](https://jacobh310-soccer-betting-app-frontend-game-predictions-cty251.streamlit.app)
+## Resources
+- https://www.kaggle.com/datasets/saife245/english-premier-league?select=2020-2021.csv
+
 
 ## Introduction
 The Sports Betting market is worth $74.2 billion dollars as of 2021 and is expected to reach $129.3 billion by 2028 according to Global News Wire There is no question that your average sports gambler is competing against companies that put millions into having the best algorithims to price their odds all with the goal of making money of the average sports bettor. I tried to tilt the odds back to the sports bettor's favor by training a machine learning algorithm that predicts the home teams winning probability. **The goal of this project is to build a tool sports better can leverage to make more informed betting decisions**
