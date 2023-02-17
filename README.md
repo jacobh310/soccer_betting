@@ -2,7 +2,7 @@
 ## Project at a glance
 - Collected data from https://www.football-data.co.uk/englandm.php Seasons 2000-2021
 - Light Data Exploration to see distribution and scatter plots of different statistics
-- Trained KNearest Neighbot, Random Forests, XGBoost, and Naive Bayes 
+- Trained KNearest Neighbot, Random Forests, XGBoost, SVC, and Naive Bayes 
 - Built Web application
 #### 📌 [See the web app in action here](https://jacobh310-soccer-betting-app-frontend-game-predictions-cty251.streamlit.app)
 
