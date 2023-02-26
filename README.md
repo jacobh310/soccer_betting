@@ -49,7 +49,7 @@ The chart below dissects the match outcome (Home win, draw, away win) by season.
 The chart below dissects each home and away goal by season. You can see that the home team outscores the away team by a pretty large quantity every season except for 2021 where the home and away teams scored almost the same amount of goals. That contributed to home teams winning at a lower rate than usual  
 
 A home team usually has the advantage because they are played with home fans. The intimidation and yelling at the away team make it harder for them to lose. But in 2021 a majority of the games were played without fans because of the covid-19 pandemic which equaled the playing field. This just goes to show you how fans play a huge 
-role in the outcome of the game. Next time, I will discard the 2021 season from the data set so the algorithims do not pick up on the pattern. 
+role in the outcome of the game. It would be unfair to judge the model with that 2020-21 season in the dev or test set. So I validated the model twice: with and without the 2020-21 season.
 
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/Goals%20by%20season.png"
     title="App Architecture" width="900"/></p>
@@ -119,11 +119,20 @@ The expected value strategy is more profitable on both the Dev set and the dev +
     
 <p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/ev_pl.png"
     title="App Architecture" width="700"/></p>
+    
+#### No Pandemic Results
+Like discussed above, I initially used the 2020-21 season in the test set. The games that season were not played with fans and tha impacted the winning percentage of the home teams. I deemed it unfair to validate the model with this data becasue it is not representive of the training data. Below or the results of removing the 2020-21 season. As you can see the models make even more profit as hypothesized.
+
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/EV_pl_table2.png"
+    title="App Architecture" width="300"/></p>
+    
+<p ><img align="center" src="https://raw.githubusercontent.com/jacobh310/soccer_betting/main/Images/ev_pl2.png"
+    title="App Architecture" width="700"/></p>
+
 
 ## Conclusion and Next Steps
 The goal was achieved to make a model that would help the average sports bettor make money. However, there is still much room for improvement 
 - Add data from other soccer leagues for better generalization and prevent overfitting
 - Add rolling average to important statistics to capture a temporal element 
 - Experiment with temporal neural networks like LSTM
-- Remove the seasons where games were played with no audience
 - Outlier analysis of features
